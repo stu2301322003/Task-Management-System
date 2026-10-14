@@ -53,6 +53,7 @@ class RequestsService:
 
     def get(self, request_id: int, db_session: Session) -> Request:
         request = db_session.get(Request, request_id)
+        # GOT TO CHANGE THIS
         if request is None:
             raise RequestNotFound(f"No request with ID {request_id} found.")
         return request

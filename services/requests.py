@@ -98,6 +98,7 @@ class RequestsService:
 
     def delete(self, request_id: int, db_session: Session) -> int:
         request = self.get(request_id, db_session)
+        # IT ISNT DELETING
         if request is None:
             raise ConflictError(f"No request with ID {request_id} was found.")
         try:

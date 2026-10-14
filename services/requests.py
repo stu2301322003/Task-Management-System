@@ -81,12 +81,14 @@ class RequestsService:
         request.title = data.title
         request.description = data.description
         request.status = data.status
+        # NECESSARY CODE CHANGE.
         try:
             db_session.commit()
         except Exception:
             db_session.rollback()
             raise ConflictError("An error occurred while updating the request entity.")
         db_session.refresh(request)
+        #ANOTHER CODE CHANGE
         return request
 
 

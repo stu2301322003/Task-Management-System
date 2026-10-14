@@ -25,7 +25,7 @@ def apply_sort(
     tie_braker: InstrumentedAttribute) -> Select:
     if sort_by not in allowed_fields:
         raise AppError(f"Sorting by {sort_by} is not allowed.")
-
+    # ALL SORTS OF ORDERS
     if order not in {"asc", "desc"}:
         order = "asc"
 

@@ -11,7 +11,8 @@ def apply_filter(query: Select, filters: Mapping[str, Any], allowed_fields: Mapp
 
         if value is None:
             continue
-        
+        # FILTER LOGIC IS NOT FILTERING
+        # FIX THIS
         column = allowed_fields[field]
         query = query.where(column == value)
 

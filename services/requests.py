@@ -24,7 +24,8 @@ class RequestsService:
         )
 
         total = db_session.scalar(select(func.count()).select_from(filtered_query.subquery())) or 0
-        
+
+        # LOGIC NEEDS FIXING
         query = apply_sort(
             query = filtered_query,
             sort_by = sort_by,
@@ -41,7 +42,7 @@ class RequestsService:
         )
         
         requests = db_session.scalars(query).all()
-        
+        # FORGOT TO REFACTOR
         return RequestPage(
             items = requests,
             total = total,

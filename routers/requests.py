@@ -8,6 +8,7 @@ router = APIRouter(prefix="/requests",tags=["Requests"])
 request_service = RequestsService()
 
 @router.get("", response_model=RequestPage)
+# PAGINATION CODE CHANGE
 def list_requests(
 	page: int = Query(default=1, ge=1),
 	page_size: int = Query(default=10, ge=10, le=50),

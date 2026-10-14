@@ -67,6 +67,7 @@ class RequestsService:
             createdBy="user",
             status="pending",
         )
+        # IMPORTANT CODE CHANGE
         try:
             db_session.add(request)
             db_session.commit()
@@ -74,6 +75,7 @@ class RequestsService:
             db_session.rollback()
             raise
         db_session.refresh(request)
+        # REFACTORING
         return request
 
 
